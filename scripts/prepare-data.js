@@ -20,7 +20,7 @@ function loadData(){
 }
 
 
-export function readData(){
+export function prepareData(){
   return new Promise((resolve) => {
     loadData()
     .then(([rawPlayerInfo, rawScoreInfo]) => {
@@ -42,3 +42,8 @@ export function readData(){
 }
 
 
+// prepareData()
+//   .then((data) => {
+//     console.log(data[0]);
+//     console.log(data[1]);
+//   })
