@@ -1,9 +1,6 @@
-import { getStats } from "./process-data.js";
 import * as fs from 'fs';
 
-async function writeDataFile(){
-
-  const data = getStats();
+export async function writeDataFile(data){
   
   let content = (
     "*********************************************************************************\n" +
@@ -18,13 +15,13 @@ async function writeDataFile(){
   let bestAccuracyContent;
 
   try{
-    await fs.appendFileSync("../res.txt", content);
+    await fs.appendFileSync("../boxscore.txt", content);
     // nesugalvojau kaip graziai lygiavima padaryti.
     await data.forEach((player) => {
       content = (
         `|${player[0]}| ${player[1]}      | ${player[2]} | ${player[3]} | ${player[4]} | ${player[5]} | ${player[6]} | ${player[7]}|\n`
       );
-      fs.appendFileSync("../res.txt", content);
+      fs.appendFileSync("../boxscore.txt", content);
 
       if(player[5] > maxPoints){
         maxPoints = player[5];
@@ -46,7 +43,7 @@ async function writeDataFile(){
       `      Most three points made: ${maxThreePointsContent}\n`+
       `The best shooting percentage: ${bestAccuracyContent}\n`
       );
-    await fs.appendFileSync("../res.txt", content);
+    await fs.appendFileSync("../boxscore.txt", content);
   }
   catch(error){
     console.error("Something went wrong while writing a file");
@@ -54,5 +51,3 @@ async function writeDataFile(){
   }
 
 }
-
-writeDataFile();

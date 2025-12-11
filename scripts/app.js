@@ -36,16 +36,23 @@
 // 6. sukurti geriausių žaidėjų atrankos funkciją (procedūrą);
 // 7. sukurti rezultatų rašymo į failą funkciją (procedūrą).
 
+
+// Ne pagal uzduotas uzduotis, bet tikslas buvo pasimokinti promise ir async/await
+
 "use strict";
 
-// import PromptSync from "prompt-sync";
 import { prepareData } from "./prepare-data.js";
 import { getStats } from "./process-data.js";
 import { writeDataFile } from "./write-file.js";
 
-// const prompt = PromptSync();
-
 prepareData()
-  .then((data) => {
-    
+  .then((rawData) => {
+    const stats = getStats(rawData);
+    return stats;
+  })
+  .then((stats) => {
+    writeDataFile(stats);
+  })
+  .catch((error) => {
+    console.error(error)
   })
