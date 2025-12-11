@@ -7,11 +7,19 @@ function loadData(){
   const loadDataPromises = Promise.all([
     // kad pasimokint, viena promise is kart su fs moduliu pasidariau, o kita susikuriau pats.
     fs.promises.readFile(`../zaidejai.txt`, {encoding: 'utf-8'}),
-
+    
     new Promise((resolve) => {
-      const data = fs.readFileSync(`../taskai.txt`, 'utf-8')
-        resolve(data);
+      const data = fs.readFile(`../taskai.txt`, {encoding: 'utf-8'}, (err, data) => {
+        if(err){
+          console.error(err);
+          return;
+        }
+        else{
+          resolve(data);
+        }
       })
+        
+    })
   ]).catch((error) => {
       console.error("Something went wrong while loading a file.");
       console.error(error);
