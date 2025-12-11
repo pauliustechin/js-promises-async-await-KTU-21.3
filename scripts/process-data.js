@@ -1,39 +1,39 @@
 import { prepareData } from "./prepare-data.js";
 
-let tempData = [[
-    [ '12', 'Aldevinas', 'Siriūnaitis' ],
-    [ '13', 'Darius', 'Gricius' ],
-    [ '2', 'Donatas', 'Drimeikis' ],
-    [ '4', 'Giedrius', 'Purauskas' ],
-    [ '10', 'Henrikas', 'Paulauskas' ],
-    [ '11', 'Justas', 'Ališauskas' ],
-    [ '9', 'Justinas', 'Vitkus' ],
-    [ '23', 'Mindaugas', 'Lukonaitis' ],
-    [ '3', 'Robertinas', 'Vilimas' ],
-    [ '26', 'Tomas', 'Lukonaitis' ],
-    [ '88', 'Tomas', 'Samalionis' ],
-    [ '33', 'Valdas', 'Dobilas' ]
-  ],
-  [
-  [ '12', '0' ], [ '12', '1' ],
-  [ '12', '1' ], [ '11', '3' ],
-  [ '9', '2' ],  [ '16', '2' ],
-  [ '33', '2' ], [ '9', '0' ],
-  [ '4', '0' ],  [ '4', '1' ],
-  [ '11', '2' ], [ '16', '3' ],
-  [ '10', '2' ], [ '9', '0' ],
-  [ '11', '3' ], [ '9', '2' ],
-  [ '23', '3' ], [ '33', '3' ],
-  [ '10', '1' ], [ '11', '0' ],
-  [ '9', '3' ],  [ '33', '0' ],
-  [ '23', '2' ], [ '23', '0' ],
-  [ '9', '2' ],  [ '9', '1' ],
-  [ '9', '1' ]
-]]
-
+// let data = [[
+//     [ '12', 'Aldevinas', 'Siriūnaitis' ],
+//     [ '13', 'Darius', 'Gricius' ],
+//     [ '2', 'Donatas', 'Drimeikis' ],
+//     [ '4', 'Giedrius', 'Purauskas' ],
+//     [ '10', 'Henrikas', 'Paulauskas' ],
+//     [ '11', 'Justas', 'Ališauskas' ],
+//     [ '9', 'Justinas', 'Vitkus' ],
+//     [ '23', 'Mindaugas', 'Lukonaitis' ],
+//     [ '3', 'Robertinas', 'Vilimas' ],
+//     [ '26', 'Tomas', 'Lukonaitis' ],
+//     [ '88', 'Tomas', 'Samalionis' ],
+//     [ '33', 'Valdas', 'Dobilas' ]
+//   ],
+//   [
+//   [ '12', '0' ], [ '12', '1' ],
+//   [ '12', '1' ], [ '11', '3' ],
+//   [ '9', '2' ],  [ '16', '2' ],
+//   [ '33', '2' ], [ '9', '0' ],
+//   [ '4', '0' ],  [ '4', '1' ],
+//   [ '11', '2' ], [ '16', '3' ],
+//   [ '10', '2' ], [ '9', '0' ],
+//   [ '11', '3' ], [ '9', '2' ],
+//   [ '23', '3' ], [ '33', '3' ],
+//   [ '10', '1' ], [ '11', '0' ],
+//   [ '9', '3' ],  [ '33', '0' ],
+//   [ '23', '2' ], [ '23', '0' ],
+//   [ '9', '2' ],  [ '9', '1' ],
+//   [ '9', '1' ]
+// ]]
 
 // reiketu skaidyti i mazesnes dalis sita funkcija:
-function getStats(data){
+export function getStats(data){
+
   // prisiskiriu du atskyrus masyvus, gautus is promise
   const players = data[0]; // player >> [ '2', 'Donatas', 'Drimeikis']
   const points = data[1];  // point >> [ 9, 1 ];
@@ -92,4 +92,4 @@ function getStats(data){
   return finalDataArray;
 }
 
-console.log(getStats(tempData))
+console.log(getStats(data))

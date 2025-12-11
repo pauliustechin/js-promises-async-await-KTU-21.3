@@ -38,6 +38,14 @@
 
 "use strict";
 
-import PromptSync from "prompt-sync";
+// import PromptSync from "prompt-sync";
+import { prepareData } from "./prepare-data.js";
+import { getStats } from "./process-data.js";
+import { writeDataFile } from "./write-file.js";
 
-const prompt = PromptSync();
+// const prompt = PromptSync();
+
+prepareData()
+  .then((data) => {
+    
+  })
