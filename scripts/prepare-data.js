@@ -28,6 +28,7 @@ function loadData(){
 }
 
 
+
 export function prepareData(){
   return new Promise((resolve) => {
     loadData()
