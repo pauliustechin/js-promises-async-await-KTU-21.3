@@ -51,7 +51,7 @@ function setData(finalDataArray, pointsArray){
               const throws = (player[2] + player[3] + player[4]);
               const missed = player[6];
 
-              if((throws > 0) && (missed > 0)){
+              if(((throws > 0) && (missed >= 0))){
                 player[7] = Math.round((throws * 100) / (throws + missed));
               }
             }))
